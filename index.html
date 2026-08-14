@@ -527,6 +527,44 @@ height:48px;
 
 <body>
 
+  <div class="search-box">
+
+<input
+type="text"
+id="siteSearch"
+placeholder="🔍 Search Kakinada..."
+onkeyup="searchKakinada()">
+
+</div>
+
+<script>
+
+function searchKakinada(){
+
+let input =
+document.getElementById("siteSearch")
+.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card, .local-card");
+
+cards.forEach(function(card){
+
+let text =
+card.innerText.toLowerCase();
+
+if(text.includes(input)){
+card.style.display="";
+}else{
+card.style.display="none";
+}
+
+});
+
+}
+
+</script>
+
 <!-- HEADER -->
 
 <header>
