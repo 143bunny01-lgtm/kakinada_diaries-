@@ -1084,6 +1084,34 @@ WhatsApp
 </div>
 
 </footer>
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+const SUPABASE_URL = "https://vwrgsyucocucqflusyaa.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_VXa480Km5wXTOwK6-JoANw_bz_eOETw";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+async function loadBusinesses() {
+
+    const { data, error } = await supabaseClient
+        .from("businesses")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        console.error("Supabase error:", error);
+        return;
+    }
+
+    console.log("Businesses loaded:", data);
+}
+
+loadBusinesses();
+</script>
 </body>
 </html>
