@@ -994,6 +994,69 @@ WhatsApp
 </div>
 
 </footer>
+<style>
 
+.search-box{
+max-width:700px;
+margin:30px auto;
+padding:0 20px;
+}
+
+.search-box input{
+width:100%;
+padding:18px 22px;
+border:1px solid #ddd8cc;
+border-radius:50px;
+background:white;
+font-size:16px;
+outline:none;
+box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.search-box input:focus{
+border-color:#171717;
+}
+
+</style>
+
+<div class="search-box">
+
+<input
+id="siteSearch"
+type="text"
+placeholder="🔍 Search Kakinada..."
+autocomplete="off">
+
+</div>
+
+<script>
+
+const searchInput = document.getElementById("siteSearch");
+
+searchInput.addEventListener("input", function(){
+
+const searchText = this.value.toLowerCase().trim();
+
+const cards = document.querySelectorAll(".card, .local-card");
+
+cards.forEach(function(card){
+
+const cardText = card.innerText.toLowerCase();
+
+if(searchText === "" || cardText.includes(searchText)){
+
+card.style.display = "";
+
+}else{
+
+card.style.display = "none";
+
+}
+
+});
+
+});
+
+</script>
 </body>
 </html>
