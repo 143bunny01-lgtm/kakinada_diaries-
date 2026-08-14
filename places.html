@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Places to Visit | Kakinada Diaries</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f5ef;
+color:#171717;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(247,245,239,.96);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #ddd8cc;
+}
+
+.nav{
+max-width:1150px;
+margin:auto;
+padding:12px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #171717;
+}
+
+.back{
+background:#171717;
+color:white;
+padding:11px 18px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+background:
+linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.35)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85");
+
+background-size:cover;
+background-position:center;
+
+min-height:430px;
+
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+max-width:1150px;
+width:100%;
+margin:auto;
+padding:70px 20px;
+color:white;
+}
+
+.label{
+font-size:11px;
+letter-spacing:3px;
+font-weight:bold;
+color:#f1d49a;
+margin-bottom:12px;
+}
+
+h1{
+font-family:Georgia,serif;
+font-size:clamp(45px,7vw,75px);
+line-height:1;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+font-size:18px;
+line-height:1.6;
+color:#eee;
+}
+
+/* PLACES */
+
+.section{
+max-width:1150px;
+margin:auto;
+padding:70px 20px;
+}
+
+.section h2{
+font-family:Georgia,serif;
+font-size:42px;
+margin-bottom:30px;
+}
+
+.places{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.place{
+background:white;
+border:1px solid #ddd8cc;
+border-radius:20px;
+overflow:hidden;
+transition:.2s;
+}
+
+.place:hover{
+transform:translateY(-5px);
+}
+
+.place-img{
+height:230px;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:flex-end;
+padding:18px;
+color:white;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+.beach{
+background:
+linear-gradient(0deg,rgba(0,0,0,.65),transparent),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.park{
+background:
+linear-gradient(0deg,rgba(0,0,0,.65),transparent),
+url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.temple{
+background:
+linear-gradient(0deg,rgba(0,0,0,.65),transparent),
+url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.place-content{
+padding:22px;
+}
+
+.place-content h3{
+font-family:Georgia,serif;
+font-size:24px;
+margin-bottom:10px;
+}
+
+.place-content p{
+color:#666;
+line-height:1.5;
+font-size:14px;
+}
+
+.location{
+display:inline-block;
+margin-top:15px;
+font-size:13px;
+font-weight:bold;
+color:#8a6b35;
+}
+
+/* INFO */
+
+.info{
+background:#ebe7de;
+}
+
+.info-box{
+max-width:1150px;
+margin:auto;
+padding:65px 20px;
+}
+
+.info-box h2{
+font-family:Georgia,serif;
+font-size:40px;
+margin-bottom:15px;
+}
+
+.info-box p{
+max-width:700px;
+color:#666;
+line-height:1.6;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid #ddd8cc;
+padding:30px 20px;
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#666;
+font-size:13px;
+}
+
+footer img{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+color:#171717;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.places{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:550px){
+
+.places{
+grid-template-columns:1fr;
+}
+
+.hero{
+min-height:450px;
+}
+
+.section{
+padding:55px 20px;
+}
+
+.section h2{
+font-size:36px;
+}
+
+footer{
+display:block;
+}
+
+footer>*{
+margin:12px 0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="nav">
+
+<a href="index.html" class="logo">
+
+<img src="logo.jpg" alt="Kakinada Diaries">
+
+<span>KAKINADA DIARIES</span>
+
+</a>
+
+<a href="index.html" class="back">
+← Home
+</a>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="label">
+KAKINADA • EXPLORE
+</div>
+
+<h1>
+Places to Visit
+</h1>
+
+<p>
+Discover beaches, parks, temples, scenic spots and
+hidden places around Kakinada.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>
+Explore Kakinada
+</h2>
+
+<div class="places">
+
+
+<div class="place">
+
+<div class="place-img beach">
+BEACH
+</div>
+
+<div class="place-content">
+
+<h3>
+Kakinada Beach
+</h3>
+
+<p>
+Enjoy the sea breeze, evening walks and beautiful
+sunsets along the Kakinada coastline.
+</p>
+
+<span class="location">
+📍 Kakinada
+</span>
+
+</div>
+
+</div>
+
+
+<div class="place">
+
+<div class="place-img park">
+PARK
+</div>
+
+<div class="place-content">
+
+<h3>
+City Parks
+</h3>
+
+<p>
+Relax, walk and spend time with family in the
+green spaces around the city.
+</p>
+
+<span class="location">
+📍 Kakinada
+</span>
+
+</div>
+
+</div>
+
+
+<div class="place">
+
+<div class="place-img temple">
+TEMPLE
+</div>
+
+<div class="place-content">
+
+<h3>
+Temples & Heritage
+</h3>
+
+<p>
+Explore peaceful temples and heritage locations
+around Kakinada and nearby areas.
+</p>
+
+<span class="location">
+📍 Kakinada
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="info">
+
+<div class="info-box">
+
+<div class="label">
+KAKINADA DIARIES
+</div>
+
+<h2>
+Know a hidden place?
+</h2>
+
+<p>
+If you know a beautiful, interesting or lesser-known
+place around Kakinada, share it with Kakinada Diaries.
+It could be featured on our website and Instagram page.
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-logo">
+
+<img src="logo.jpg" alt="Kakinada Diaries">
+
+<span>KAKINADA DIARIES</span>
+
+</div>
+
+<div>
+© 2026 Kakinada Diaries
+</div>
+
+<div>
+
+<a href="https://www.instagram.com/kakinada_diaries/" target="_blank">
+Instagram
+</a>
+
+&nbsp; · &nbsp;
+
+<a href="https://wa.me/919490120103" target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
