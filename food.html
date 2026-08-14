@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Food & Cafés | Kakinada Diaries</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f5ef;
+color:#171717;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(247,245,239,.96);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #ddd8cc;
+}
+
+.nav{
+max-width:1150px;
+margin:auto;
+padding:12px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #171717;
+}
+
+.back{
+background:#171717;
+color:white;
+padding:11px 18px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+min-height:430px;
+
+background:
+linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.35)),
+url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=85");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+max-width:1150px;
+width:100%;
+margin:auto;
+padding:70px 20px;
+color:white;
+}
+
+.label{
+font-size:11px;
+letter-spacing:3px;
+font-weight:bold;
+color:#f1d49a;
+margin-bottom:12px;
+}
+
+h1{
+font-family:Georgia,serif;
+font-size:clamp(45px,7vw,75px);
+line-height:1;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+font-size:18px;
+line-height:1.6;
+color:#eee;
+}
+
+/* SECTION */
+
+.section{
+max-width:1150px;
+margin:auto;
+padding:70px 20px;
+}
+
+.section h2{
+font-family:Georgia,serif;
+font-size:42px;
+margin-bottom:30px;
+}
+
+/* FOOD CARDS */
+
+.food-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.food-card{
+background:white;
+border:1px solid #ddd8cc;
+border-radius:20px;
+overflow:hidden;
+transition:.2s;
+}
+
+.food-card:hover{
+transform:translateY(-5px);
+}
+
+.food-img{
+height:230px;
+display:flex;
+align-items:flex-end;
+padding:18px;
+color:white;
+font-weight:bold;
+letter-spacing:2px;
+background-size:cover;
+background-position:center;
+}
+
+.restaurant{
+background:
+linear-gradient(0deg,rgba(0,0,0,.65),transparent),
+url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.cafe{
+background:
+linear-gradient(0deg,rgba(0,0,0,.65),transparent),
+url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.street{
+background:
+linear-gradient(0deg,rgba(0,0,0,.65),transparent),
+url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.food-content{
+padding:22px;
+}
+
+.food-content h3{
+font-family:Georgia,serif;
+font-size:24px;
+margin-bottom:10px;
+}
+
+.food-content p{
+color:#666;
+line-height:1.5;
+font-size:14px;
+}
+
+.tag{
+display:inline-block;
+margin-top:15px;
+background:#f1eadc;
+padding:7px 11px;
+border-radius:20px;
+font-size:11px;
+font-weight:bold;
+color:#80612e;
+}
+
+/* FEATURE */
+
+.feature-section{
+background:#ebe7de;
+}
+
+.feature-box{
+max-width:1150px;
+margin:auto;
+padding:65px 20px;
+}
+
+.feature-box h2{
+font-family:Georgia,serif;
+font-size:40px;
+margin-bottom:15px;
+}
+
+.feature-box p{
+max-width:700px;
+color:#666;
+line-height:1.6;
+}
+
+/* WHATSAPP */
+
+.recommend{
+max-width:1100px;
+margin:60px auto;
+background:#171717;
+color:white;
+border-radius:25px;
+padding:50px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:25px;
+}
+
+.recommend h2{
+font-family:Georgia,serif;
+font-size:36px;
+margin-bottom:12px;
+}
+
+.recommend p{
+color:#bbb;
+line-height:1.5;
+max-width:650px;
+}
+
+.whatsapp{
+background:#f1d49a;
+color:#171717;
+padding:14px 20px;
+border-radius:30px;
+font-weight:bold;
+white-space:nowrap;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid #ddd8cc;
+padding:30px 20px;
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#666;
+font-size:13px;
+}
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+color:#171717;
+}
+
+.footer-logo img{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.food-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.recommend{
+margin:40px 20px;
+padding:35px;
+display:block;
+}
+
+.whatsapp{
+display:inline-block;
+margin-top:25px;
+}
+
+footer{
+display:block;
+}
+
+footer>*{
+margin:12px 0;
+}
+
+}
+
+@media(max-width:550px){
+
+.food-grid{
+grid-template-columns:1fr;
+}
+
+.hero{
+min-height:450px;
+}
+
+.section{
+padding:55px 20px;
+}
+
+.section h2{
+font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="nav">
+
+<a href="index.html" class="logo">
+
+<img src="logo.jpg" alt="Kakinada Diaries">
+
+<span>KAKINADA DIARIES</span>
+
+</a>
+
+<a href="index.html" class="back">
+← Home
+</a>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="label">
+KAKINADA • FOOD
+</div>
+
+<h1>
+Food & Cafés
+</h1>
+
+<p>
+Discover the restaurants, cafés, street food and
+local food spots that Kakinada has to offer.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>
+Discover Kakinada Food
+</h2>
+
+<div class="food-grid">
+
+
+<div class="food-card">
+
+<div class="food-img restaurant">
+RESTAURANTS
+</div>
+
+<div class="food-content">
+
+<h3>
+Restaurants
+</h3>
+
+<p>
+Discover popular restaurants, family dining
+and must-try dishes around Kakinada.
+</p>
+
+<span class="tag">
+🍽️ DINING
+</span>
+
+</div>
+
+</div>
+
+
+<div class="food-card">
+
+<div class="food-img cafe">
+CAFÉS
+</div>
+
+<div class="food-content">
+
+<h3>
+Cafés
+</h3>
+
+<p>
+Find aesthetic cafés, coffee spots and
+perfect places to hang out with friends.
+</p>
+
+<span class="tag">
+☕ COFFEE & CHILL
+</span>
+
+</div>
+
+</div>
+
+
+<div class="food-card">
+
+<div class="food-img street">
+STREET FOOD
+</div>
+
+<div class="food-content">
+
+<h3>
+Street Food
+</h3>
+
+<p>
+Explore tasty local street food and
+budget-friendly food spots.
+</p>
+
+<span class="tag">
+🔥 LOCAL FAVOURITES
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="feature-section">
+
+<div class="feature-box">
+
+<div class="label">
+KAKINADA DIARIES
+</div>
+
+<h2>
+What's your favourite food spot?
+</h2>
+
+<p>
+Know a restaurant, café or street food place that
+deserves more attention? Share it with Kakinada Diaries.
+We may feature it on our website and Instagram page.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="recommend">
+
+<div>
+
+<h2>
+Want your food business featured?
+</h2>
+
+<p>
+Restaurants, cafés and food businesses can contact
+Kakinada Diaries for promotions and featured listings.
+</p>
+
+</div>
+
+<a
+class="whatsapp"
+href="https://wa.me/919490120103?text=Hi%20Kakinada%20Diaries%2C%20I%20want%20to%20promote%20my%20food%20business."
+target="_blank">
+
+Promote Your Food Business →
+
+</a>
+
+</section>
+
+
+<footer>
+
+<div class="footer-logo">
+
+<img src="logo.jpg" alt="Kakinada Diaries">
+
+<span>
+KAKINADA DIARIES
+</span>
+
+</div>
+
+<div>
+© 2026 Kakinada Diaries
+</div>
+
+<div>
+
+<a
+href="https://www.instagram.com/kakinada_diaries/"
+target="_blank">
+Instagram
+</a>
+
+&nbsp; · &nbsp;
+
+<a
+href="https://wa.me/919490120103"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+</footer>
+
+
+</body>
+  </html>
