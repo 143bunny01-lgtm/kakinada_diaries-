@@ -564,37 +564,97 @@ transform:translateY(-1px);
 type="text"
 id="siteSearch"
 placeholder="🔍 Search Kakinada..."
-onkeyup="searchKakinada()">
+>
+    
 
-</div>
+  </div>
+  <script>
 
-<script>
+const searchInput = document.getElementById("siteSearch");
 
-function searchKakinada(){
+searchInput.addEventListener("keydown", function(event){
 
-let input =
-document.getElementById("siteSearch")
-.value.toLowerCase();
+if(event.key !== "Enter"){
+return;
+}
 
-let cards =
-document.querySelectorAll(".card, .local-card");
+const query = this.value.toLowerCase().trim();
 
-cards.forEach(function(card){
+if(query === ""){
+return;
+}
 
-let text =
-card.innerText.toLowerCase();
+/* FOOD */
 
-if(text.includes(input)){
-card.style.display="";
-}else{
-card.style.display="none";
+if(
+query.includes("food") ||
+query.includes("cafe") ||
+query.includes("cafes") ||
+query.includes("restaurant") ||
+query.includes("restaurants") ||
+query.includes("street food")
+){
+window.location.href = "food.html";
+return;
+}
+
+/* EVENTS */
+
+if(
+query.includes("event") ||
+query.includes("events") ||
+query.includes("concert") ||
+query.includes("festival") ||
+query.includes("workshop") ||
+query.includes("dj")
+){
+window.location.href = "events.html";
+return;
+}
+
+/* BUSINESSES */
+
+if(
+query.includes("business") ||
+query.includes("businesses") ||
+query.includes("shop") ||
+query.includes("shops") ||
+query.includes("salon") ||
+query.includes("store") ||
+query.includes("stores")
+){
+window.location.href = "businesses.html";
+return;
+}
+
+/* PLACES */
+
+if(
+query.includes("place") ||
+query.includes("places") ||
+query.includes("beach") ||
+query.includes("temple") ||
+query.includes("park") ||
+query.includes("visit") ||
+query.includes("tourist")
+){
+window.location.href = "places.html";
+return;
+}
+
+/* HOME */
+
+if(
+query.includes("home") ||
+query.includes("kakinada")
+){
+window.location.href = "index.html";
+return;
 }
 
 });
 
-}
-
-</script>
+  </script>
 
 <!-- HEADER -->
 
