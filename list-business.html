@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>List Your Business | Kakinada Diaries</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f5ef;
+color:#171717;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(247,245,239,.96);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #ddd8cc;
+}
+
+.nav{
+max-width:1150px;
+margin:auto;
+padding:12px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #171717;
+}
+
+.back{
+background:#171717;
+color:white;
+padding:11px 18px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+background:#171717;
+color:white;
+padding:75px 20px;
+}
+
+.hero-inner{
+max-width:850px;
+margin:auto;
+}
+
+.label{
+font-size:11px;
+letter-spacing:3px;
+font-weight:bold;
+color:#f1d49a;
+margin-bottom:14px;
+}
+
+.hero h1{
+font-family:Georgia,serif;
+font-size:clamp(45px,7vw,70px);
+line-height:1;
+margin-bottom:20px;
+}
+
+.hero p{
+color:#bbb;
+font-size:17px;
+line-height:1.6;
+max-width:650px;
+}
+
+/* FORM */
+
+.form-section{
+max-width:850px;
+margin:auto;
+padding:65px 20px;
+}
+
+.form-box{
+background:white;
+border:1px solid #ddd8cc;
+border-radius:25px;
+padding:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.05);
+}
+
+.form-box h2{
+font-family:Georgia,serif;
+font-size:32px;
+margin-bottom:10px;
+}
+
+.form-box .intro{
+color:#666;
+line-height:1.5;
+margin-bottom:30px;
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group label{
+display:block;
+font-size:13px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+width:100%;
+padding:15px 16px;
+border:1px solid #d9d4c9;
+border-radius:12px;
+font-size:15px;
+font-family:Arial,Helvetica,sans-serif;
+outline:none;
+background:#faf9f6;
+}
+
+.form-group textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+border-color:#171717;
+background:white;
+}
+
+.submit-btn{
+width:100%;
+border:0;
+background:#171717;
+color:white;
+padding:17px;
+border-radius:30px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.submit-btn:hover{
+opacity:.9;
+}
+
+.note{
+text-align:center;
+font-size:12px;
+color:#777;
+margin-top:15px;
+line-height:1.5;
+}
+
+/* BENEFITS */
+
+.benefits{
+background:#ebe7de;
+padding:60px 20px;
+}
+
+.benefits-inner{
+max-width:850px;
+margin:auto;
+}
+
+.benefits h2{
+font-family:Georgia,serif;
+font-size:38px;
+margin-bottom:25px;
+}
+
+.benefit{
+background:white;
+border:1px solid #ddd8cc;
+border-radius:16px;
+padding:20px;
+margin-bottom:12px;
+}
+
+.benefit strong{
+display:block;
+margin-bottom:6px;
+}
+
+.benefit span{
+font-size:14px;
+color:#666;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid #ddd8cc;
+padding:30px 20px;
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#666;
+font-size:13px;
+}
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+color:#171717;
+}
+
+.footer-logo img{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.form-box{
+padding:25px 20px;
+}
+
+.hero{
+padding:60px 20px;
+}
+
+.form-section{
+padding:45px 15px;
+}
+
+footer{
+display:block;
+}
+
+footer>*{
+margin:12px 0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="nav">
+
+<a href="index.html" class="logo">
+
+<img src="logo.jpg" alt="Kakinada Diaries">
+
+<span>KAKINADA DIARIES</span>
+
+</a>
+
+<a href="index.html" class="back">
+← Home
+</a>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<div class="label">
+FOR KAKINADA BUSINESS OWNERS
+</div>
+
+<h1>
+List Your Business
+</h1>
+
+<p>
+Get your business discovered by Kakinada Diaries'
+local audience through our website and Instagram community.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="form-section">
+
+<div class="form-box">
+
+<h2>
+Business Details
+</h2>
+
+<p class="intro">
+Fill in your details below. After submitting,
+WhatsApp will open with your information ready to send
+to Kakinada Diaries.
+</p>
+
+
+<form id="businessForm">
+
+
+<div class="form-group">
+
+<label>
+Owner / Contact Name *
+</label>
+
+<input
+type="text"
+id="owner"
+placeholder="Enter your name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Business Name *
+</label>
+
+<input
+type="text"
+id="business"
+placeholder="Enter your business name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Business Category *
+</label>
+
+<select id="category" required>
+
+<option value="">
+Select category
+</option>
+
+<option>
+Restaurant / Food
+</option>
+
+<option>
+Café
+</option>
+
+<option>
+Salon / Beauty
+</option>
+
+<option>
+Shopping
