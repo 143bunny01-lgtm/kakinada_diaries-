@@ -6,523 +6,566 @@
 
 <title>Kakinada Diaries | Everything Kakinada</title>
 
-<meta name="description"
-content="Kakinada Diaries - Discover food, places, events, businesses and stories from Kakinada.">
+<meta name="description" content="Kakinada Diaries - Discover food, places, events, businesses and stories from Kakinada.">
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f7f5ef;
-  color:#171717;
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f5ef;
+color:#171717;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+text-decoration:none;
+color:inherit;
 }
 
-/* NAVBAR */
+/* HEADER */
 
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(247,245,239,.95);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid #ddd8cc;
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(247,245,239,.96);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #ddd8cc;
 }
 
 .nav{
-  max-width:1150px;
-  margin:auto;
-  padding:15px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+max-width:1150px;
+margin:auto;
+padding:12px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:bold;
-  letter-spacing:1px;
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:bold;
+letter-spacing:1px;
 }
 
-.logo-circle{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  background:#171717;
-  color:#f1d49a;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
+.logo-img{
+width:52px;
+height:52px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #171717;
 }
 
 .nav-links{
-  display:flex;
-  gap:25px;
-  font-size:14px;
+display:flex;
+gap:25px;
+font-size:14px;
 }
 
 .nav-links a:hover{
-  opacity:.6;
+opacity:.6;
 }
 
 .nav-btn{
-  background:#171717;
-  color:white;
-  padding:11px 18px;
-  border-radius:30px;
-  font-size:13px;
-  font-weight:bold;
+background:#171717;
+color:white;
+padding:12px 20px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
 }
 
 /* HERO */
 
 .hero{
-  min-height:620px;
-  display:flex;
-  align-items:center;
+min-height:620px;
+display:flex;
+align-items:center;
 
-  background:
-  linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.35)),
-  url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85");
+background:
+linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.38)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85");
 
-  background-size:cover;
-  background-position:center;
+background-size:cover;
+background-position:center;
 }
 
 .hero-content{
-  max-width:1150px;
-  width:100%;
-  margin:auto;
-  padding:80px 20px;
-  color:white;
+max-width:1150px;
+width:100%;
+margin:auto;
+padding:80px 20px;
+color:white;
 }
 
 .profile{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:25px;
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:28px;
 }
 
-.profile-circle{
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  background:#f1d49a;
-  color:#171717;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-  font-weight:bold;
+.profile-logo{
+width:65px;
+height:65px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #f1d49a;
 }
 
-.small{
-  font-size:13px;
-  opacity:.75;
+.profile-name{
+font-size:16px;
+}
+
+.profile-small{
+font-size:12px;
+opacity:.75;
+margin-top:4px;
 }
 
 .eyebrow{
-  font-size:11px;
-  letter-spacing:3px;
-  margin-bottom:15px;
-  opacity:.7;
-  font-weight:bold;
+font-size:11px;
+letter-spacing:3px;
+margin-bottom:15px;
+opacity:.7;
+font-weight:bold;
 }
 
 .hero h1{
-  font-family:Georgia,serif;
-  font-size:clamp(48px,7vw,85px);
-  line-height:1;
-  max-width:800px;
+font-family:Georgia,serif;
+font-size:clamp(48px,7vw,85px);
+line-height:1;
+max-width:800px;
 }
 
 .hero h1 span{
-  color:#f1d49a;
+color:#f1d49a;
 }
 
 .hero p{
-  max-width:550px;
-  font-size:18px;
-  line-height:1.6;
-  color:#eee;
-  margin-top:25px;
+max-width:550px;
+font-size:18px;
+line-height:1.6;
+color:#eee;
+margin-top:25px;
 }
 
 .buttons{
-  display:flex;
-  gap:20px;
-  align-items:center;
-  margin-top:30px;
-  flex-wrap:wrap;
+display:flex;
+gap:20px;
+align-items:center;
+margin-top:30px;
+flex-wrap:wrap;
 }
 
 .primary{
-  background:#f1d49a;
-  color:#171717;
-  padding:15px 22px;
-  border-radius:30px;
-  font-weight:bold;
+background:#f1d49a;
+color:#171717;
+padding:15px 22px;
+border-radius:30px;
+font-weight:bold;
 }
 
 .secondary{
-  font-weight:bold;
+font-weight:bold;
 }
 
 /* STATS */
 
 .stats{
-  max-width:1150px;
-  margin:auto;
-  background:white;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border:1px solid #ddd8cc;
+max-width:1150px;
+margin:auto;
+background:white;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+border:1px solid #ddd8cc;
 }
 
 .stat{
-  text-align:center;
-  padding:25px;
-  border-right:1px solid #ddd8cc;
+text-align:center;
+padding:25px;
+border-right:1px solid #ddd8cc;
 }
 
 .stat:last-child{
-  border-right:none;
+border-right:none;
 }
 
 .stat strong{
-  display:block;
-  font-family:Georgia,serif;
-  font-size:27px;
+display:block;
+font-family:Georgia,serif;
+font-size:27px;
 }
 
 .stat span{
-  color:#777;
-  font-size:12px;
+color:#777;
+font-size:12px;
 }
 
 /* TICKER */
 
 .ticker{
-  display:flex;
-  overflow:hidden;
-  background:white;
-  border-top:1px solid #ddd8cc;
-  border-bottom:1px solid #ddd8cc;
+display:flex;
+overflow:hidden;
+background:white;
+border-top:1px solid #ddd8cc;
+border-bottom:1px solid #ddd8cc;
 }
 
 .ticker div{
-  padding:16px 25px;
-  border-right:1px solid #ddd8cc;
-  white-space:nowrap;
-  font-size:13px;
-  font-weight:bold;
+padding:16px 25px;
+border-right:1px solid #ddd8cc;
+white-space:nowrap;
+font-size:13px;
+font-weight:bold;
 }
 
 /* SECTIONS */
 
 .section{
-  max-width:1150px;
-  margin:auto;
-  padding:80px 20px;
+max-width:1150px;
+margin:auto;
+padding:80px 20px;
 }
 
 .label{
-  font-size:11px;
-  letter-spacing:3px;
-  color:#8a6b35;
-  font-weight:bold;
-  margin-bottom:10px;
+font-size:11px;
+letter-spacing:3px;
+color:#8a6b35;
+font-weight:bold;
+margin-bottom:10px;
 }
 
 .section h2{
-  font-family:Georgia,serif;
-  font-size:45px;
-  margin-bottom:30px;
+font-family:Georgia,serif;
+font-size:45px;
+margin-bottom:30px;
 }
 
-/* CATEGORY CARDS */
+/* CARDS */
 
 .cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
 }
 
 .card{
-  background:white;
-  border:1px solid #ddd8cc;
-  border-radius:20px;
-  padding:28px;
-  min-height:190px;
-  transition:.2s;
+background:white;
+border:1px solid #ddd8cc;
+border-radius:20px;
+padding:28px;
+min-height:190px;
+transition:.2s;
 }
 
 .card:hover{
-  transform:translateY(-5px);
+transform:translateY(-5px);
 }
 
 .icon{
-  font-size:32px;
-  margin-bottom:25px;
+font-size:32px;
+margin-bottom:25px;
 }
 
 .card h3{
-  margin-bottom:10px;
-  font-size:19px;
+margin-bottom:10px;
+font-size:19px;
 }
 
 .card p{
-  color:#666;
-  line-height:1.5;
-  font-size:14px;
+color:#666;
+line-height:1.5;
+font-size:14px;
 }
 
 /* LOCAL PICKS */
 
 .dark-section{
-  background:#ebe7de;
+background:#ebe7de;
 }
 
 .local-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .local-card{
-  background:white;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid #ddd8cc;
+background:white;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #ddd8cc;
 }
 
 .local-image{
-  height:220px;
-  display:flex;
-  align-items:flex-end;
-  padding:20px;
-  color:white;
-  font-weight:bold;
-  letter-spacing:3px;
+height:220px;
+display:flex;
+align-items:flex-end;
+padding:20px;
+color:white;
+font-weight:bold;
+letter-spacing:3px;
 
-  background:
-  linear-gradient(0deg,rgba(0,0,0,.6),transparent),
-  url("https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80")
-  center/cover;
+background:
+linear-gradient(0deg,rgba(0,0,0,.6),transparent),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80")
+center/cover;
 }
 
 .local-card:nth-child(2) .local-image{
-  background:
-  linear-gradient(0deg,rgba(0,0,0,.6),transparent),
-  url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80")
-  center/cover;
+background:
+linear-gradient(0deg,rgba(0,0,0,.6),transparent),
+url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80")
+center/cover;
 }
 
 .local-card:nth-child(3) .local-image{
-  background:
-  linear-gradient(0deg,rgba(0,0,0,.6),transparent),
-  url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80")
-  center/cover;
+background:
+linear-gradient(0deg,rgba(0,0,0,.6),transparent),
+url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80")
+center/cover;
 }
 
 .local-content{
-  padding:23px;
+padding:23px;
 }
 
 .local-content small{
-  color:#9a6e27;
-  font-weight:bold;
-  letter-spacing:2px;
+color:#9a6e27;
+font-weight:bold;
+letter-spacing:2px;
 }
 
 .local-content h3{
-  font-family:Georgia,serif;
-  font-size:23px;
-  margin:10px 0;
+font-family:Georgia,serif;
+font-size:23px;
+margin:10px 0;
 }
 
 .local-content p{
-  color:#666;
-  line-height:1.5;
+color:#666;
+line-height:1.5;
 }
 
 /* PROMOTION */
 
 .promotion{
-  max-width:1100px;
-  margin:70px auto;
-  background:#171717;
-  color:white;
-  border-radius:25px;
-  padding:55px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
+max-width:1100px;
+margin:70px auto;
+background:#171717;
+color:white;
+border-radius:25px;
+padding:55px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:30px;
 }
 
 .promotion h2{
-  font-family:Georgia,serif;
-  font-size:40px;
-  margin-bottom:15px;
+font-family:Georgia,serif;
+font-size:40px;
+margin-bottom:15px;
 }
 
 .promotion p{
-  color:#bbb;
-  line-height:1.5;
-  max-width:650px;
+color:#bbb;
+line-height:1.5;
+max-width:650px;
 }
 
 .whatsapp{
-  background:#f1d49a;
-  color:#171717;
-  padding:15px 22px;
-  border-radius:30px;
-  font-weight:bold;
-  white-space:nowrap;
+background:#f1d49a;
+color:#171717;
+padding:15px 22px;
+border-radius:30px;
+font-weight:bold;
+white-space:nowrap;
 }
 
 /* FOOTER */
 
 footer{
-  border-top:1px solid #ddd8cc;
-  padding:30px 20px;
-  max-width:1150px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  color:#666;
-  font-size:13px;
+border-top:1px solid #ddd8cc;
+padding:30px 20px;
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#666;
+font-size:13px;
 }
 
 footer .logo{
-  color:#171717;
+color:#171717;
+}
+
+/* TABLET */
+
+@media(max-width:800px){
+
+.nav-links{
+display:none;
+}
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.local-grid{
+grid-template-columns:1fr;
+}
+
+.promotion{
+margin:40px 20px;
+padding:35px;
+display:block;
+}
+
+.whatsapp{
+display:inline-block;
+margin-top:25px;
+}
+
+footer{
+display:block;
+}
+
+footer > *{
+margin:12px 0;
+}
+
 }
 
 /* MOBILE */
 
-@media(max-width:800px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .cards{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .local-grid{
-    grid-template-columns:1fr;
-  }
-
-  .promotion{
-    margin:40px 20px;
-    padding:35px;
-    display:block;
-  }
-
-  .whatsapp{
-    display:inline-block;
-    margin-top:25px;
-  }
-
-  footer{
-    display:block;
-  }
-
-  footer > *{
-    margin:12px 0;
-  }
-}
-
 @media(max-width:500px){
 
-  .hero{
-    min-height:650px;
-  }
-
-  .hero-content{
-    padding:60px 20px;
-  }
-
-  .hero h1{
-    font-size:52px;
-  }
-
-  .cards{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .stats{
-    grid-template-columns:1fr;
-  }
-
-  .stat{
-    border-right:none;
-    border-bottom:1px solid #ddd8cc;
-  }
-
-  .stat:last-child{
-    border-bottom:none;
-  }
-
-  .section{
-    padding:60px 20px;
-  }
-
-  .section h2{
-    font-size:38px;
-  }
-
-  .promotion h2{
-    font-size:32px;
-  }
+.hero{
+min-height:650px;
 }
+
+.hero-content{
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.card{
+padding:20px;
+min-height:175px;
+}
+
+.icon{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.card h3{
+font-size:16px;
+}
+
+.card p{
+font-size:13px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.stat{
+border-right:none;
+border-bottom:1px solid #ddd8cc;
+}
+
+.stat:last-child{
+border-bottom:none;
+}
+
+.section{
+padding:60px 20px;
+}
+
+.section h2{
+font-size:38px;
+}
+
+.promotion h2{
+font-size:32px;
+}
+
+.logo-img{
+width:48px;
+height:48px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header>
 
 <div class="nav">
 
 <a href="#" class="logo">
-<div class="logo-circle">KD</div>
+
+<img
+src="logo.jpg"
+class="logo-img"
+alt="Kakinada Diaries Logo">
+
 <span>KAKINADA DIARIES</span>
+
 </a>
 
 <div class="nav-links">
+
 <a href="#explore">Explore</a>
+
 <a href="#food">Food</a>
+
 <a href="#events">Events</a>
+
 <a href="#business">Businesses</a>
+
 </div>
 
-<a href="#promote" class="nav-btn">Promote</a>
+<a href="#promote" class="nav-btn">
+Promote
+</a>
 
 </div>
 
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -530,27 +573,44 @@ footer .logo{
 
 <div class="profile">
 
-<div class="profile-circle">KD</div>
+<img
+src="logo.jpg"
+class="profile-logo"
+alt="Kakinada Diaries">
 
 <div>
+
+<div class="profile-name">
 <b>@kakinada_diaries</b>
-<br>
-<span class="small">184K+ Kakinada community</span>
+</div>
+
+<div class="profile-small">
+184K+ Kakinada community
 </div>
 
 </div>
 
-<div class="eyebrow">KAKINADA • ANDHRA PRADESH</div>
+</div>
+
+<div class="eyebrow">
+KAKINADA • ANDHRA PRADESH
+</div>
 
 <h1>
+
 Everything Kakinada,
+
 <br>
+
 <span>in one place.</span>
+
 </h1>
 
 <p>
-Discover the places, food, events, people, offers and businesses
-that make Kakinada special.
+
+Discover the places, food, events, people,
+offers and businesses that make Kakinada special.
+
 </p>
 
 <div class="buttons">
@@ -563,7 +623,9 @@ Explore Kakinada
 href="https://www.instagram.com/kakinada_diaries/"
 target="_blank"
 class="secondary">
+
 Follow on Instagram →
+
 </a>
 
 </div>
@@ -573,54 +635,87 @@ Follow on Instagram →
 </section>
 
 
+<!-- STATS -->
+
 <div class="stats">
 
 <div class="stat">
+
 <strong>184K+</strong>
-<span>Instagram followers</span>
+
+<span>
+Instagram followers
+</span>
+
 </div>
 
 <div class="stat">
+
 <strong>6,750+</strong>
-<span>Posts & Reels</span>
+
+<span>
+Posts & Reels
+</span>
+
 </div>
 
 <div class="stat">
+
 <strong>100%</strong>
-<span>Kakinada focused</span>
-</div>
+
+<span>
+Kakinada focused
+</span>
 
 </div>
 
+</div>
+
+
+<!-- TRENDING -->
 
 <div class="ticker">
 
 <div>🔥 Trending in Kakinada</div>
+
 <div>🍴 Food</div>
+
 <div>🎉 Events</div>
+
 <div>📍 Places</div>
+
 <div>🛍️ Businesses</div>
 
 </div>
 
 
+<!-- EXPLORE -->
+
 <section class="section" id="explore">
 
-<div class="label">DISCOVER</div>
+<div class="label">
+DISCOVER
+</div>
 
-<h2>Explore Kakinada</h2>
+<h2>
+Explore Kakinada
+</h2>
 
 <div class="cards">
 
+
 <div class="card">
 
-<div class="icon">🌊</div>
+<div class="icon">
+🌊
+</div>
 
-<h3>Places to Visit</h3>
+<h3>
+Places to Visit
+</h3>
 
 <p>
-Beaches, parks, temples and hidden places
-worth exploring.
+Beaches, parks, temples and hidden places worth exploring.
 </p>
 
 </div>
@@ -628,13 +723,16 @@ worth exploring.
 
 <div class="card" id="food">
 
-<div class="icon">🍜</div>
+<div class="icon">
+🍜
+</div>
 
-<h3>Food & Cafés</h3>
+<h3>
+Food & Cafés
+</h3>
 
 <p>
-Local favourites, cafés, street food and
-budget food spots.
+Local favourites, cafés, street food and budget food spots.
 </p>
 
 </div>
@@ -642,13 +740,16 @@ budget food spots.
 
 <div class="card" id="events">
 
-<div class="icon">🎤</div>
+<div class="icon">
+🎤
+</div>
 
-<h3>Events</h3>
+<h3>
+Events
+</h3>
 
 <p>
-Concerts, festivals, exhibitions, workshops
-and more.
+Concerts, festivals, exhibitions, workshops and more.
 </p>
 
 </div>
@@ -656,29 +757,39 @@ and more.
 
 <div class="card" id="business">
 
-<div class="icon">🛍️</div>
+<div class="icon">
+🛍️
+</div>
 
-<h3>Local Businesses</h3>
+<h3>
+Local Businesses
+</h3>
 
 <p>
-Discover shops, services and new businesses
-around Kakinada.
+Discover shops, services and new businesses around Kakinada.
 </p>
 
 </div>
+
 
 </div>
 
 </section>
 
 
+<!-- LOCAL PICKS -->
+
 <section class="dark-section">
 
 <div class="section">
 
-<div class="label">LOCAL PICKS</div>
+<div class="label">
+LOCAL PICKS
+</div>
 
-<h2>What's happening?</h2>
+<h2>
+What's happening?
+</h2>
 
 <div class="local-grid">
 
@@ -691,7 +802,9 @@ PLACES
 
 <div class="local-content">
 
-<small>EXPLORE</small>
+<small>
+EXPLORE
+</small>
 
 <h3>
 10 places you should explore in Kakinada
@@ -714,7 +827,9 @@ FOOD
 
 <div class="local-content">
 
-<small>FOOD</small>
+<small>
+FOOD
+</small>
 
 <h3>
 Best local food spots to try
@@ -737,7 +852,9 @@ EVENTS
 
 <div class="local-content">
 
-<small>EVENTS</small>
+<small>
+EVENTS
+</small>
 
 <h3>
 Upcoming events around Kakinada
@@ -759,19 +876,25 @@ Keep your weekend plans sorted.
 </section>
 
 
+<!-- BUSINESS PROMOTION -->
+
 <section class="promotion" id="promote">
 
 <div>
 
-<div class="label">FOR LOCAL BUSINESSES</div>
+<div class="label">
+FOR LOCAL BUSINESSES
+</div>
 
 <h2>
 Want Kakinada to discover your business?
 </h2>
 
 <p>
-Get featured on Kakinada Diaries through business
-listings, event promotions and sponsored stories.
+
+Get featured on Kakinada Diaries through
+business listings, event promotions and sponsored stories.
+
 </p>
 
 </div>
@@ -789,13 +912,20 @@ Promote With Us →
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
 <div class="logo">
 
-<div class="logo-circle">KD</div>
+<img
+src="logo.jpg"
+class="logo-img"
+alt="Kakinada Diaries">
 
-<span>KAKINADA DIARIES</span>
+<span>
+KAKINADA DIARIES
+</span>
 
 </div>
 
@@ -830,4 +960,4 @@ WhatsApp
 </footer>
 
 </body>
-  </html>
+</html>
