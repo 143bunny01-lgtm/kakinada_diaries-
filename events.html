@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Events in Kakinada | Kakinada Diaries</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f5ef;
+color:#171717;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(247,245,239,.96);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #ddd8cc;
+}
+
+.nav{
+max-width:1150px;
+margin:auto;
+padding:12px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid #171717;
+}
+
+.back{
+background:#171717;
+color:white;
+padding:11px 18px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+min-height:430px;
+
+background:
+linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.35)),
+url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=85");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+max-width:1150px;
+width:100%;
+margin:auto;
+padding:70px 20px;
+color:white;
+}
+
+.label{
+font-size:11px;
+letter-spacing:3px;
+font-weight:bold;
+color:#f1d49a;
+margin-bottom:12px;
+}
+
+h1{
+font-family:Georgia,serif;
+font-size:clamp(45px,7vw,75px);
+line-height:1;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+font-size:18px;
+line-height:1.6;
+color:#eee;
+}
+
+/* SECTION */
+
+.section{
+max-width:1150px;
+margin:auto;
+padding:70px 20px;
+}
+
+.section h2{
+font-family:Georgia,serif;
+font-size:42px;
+margin-bottom:30px;
+}
+
+/* EVENT CARDS */
+
+.events{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.event-card{
+background:white;
+border:1px solid #ddd8cc;
+border-radius:20px;
+overflow:hidden;
+transition:.2s;
+}
+
+.event-card:hover{
+transform:translateY(-5px);
+}
+
+.event-img{
+height:230px;
+display:flex;
+align-items:flex-end;
+padding:18px;
+color:white;
+font-weight:bold;
+letter-spacing:2px;
+background-size:cover;
+background-position:center;
+}
+
+.concert{
+background:
+linear-gradient(0deg,rgba(0,0,0,.7),transparent),
+url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.festival{
+background:
+linear-gradient(0deg,rgba(0,0,0,.7),transparent),
+url("https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.workshop{
+background:
+linear-gradient(0deg,rgba(0,0,0,.7),transparent),
+url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80")
+center/cover;
+}
+
+.event-content{
+padding:22px;
+}
+
+.event-date{
+display:inline-block;
+background:#f1eadc;
+color:#80612e;
+padding:7px 11px;
+border-radius:20px;
+font-size:11px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.event-content h3{
+font-family:Georgia,serif;
+font-size:24px;
+margin-bottom:10px;
+}
+
+.event-content p{
+color:#666;
+line-height:1.5;
+font-size:14px;
+}
+
+.event-info{
+margin-top:15px;
+font-size:13px;
+font-weight:bold;
+color:#555;
+line-height:1.8;
+}
+
+/* SUBMIT */
+
+.submit-section{
+background:#ebe7de;
+}
+
+.submit-box{
+max-width:1150px;
+margin:auto;
+padding:65px 20px;
+}
+
+.submit-box h2{
+font-family:Georgia,serif;
+font-size:40px;
+margin-bottom:15px;
+}
+
+.submit-box p{
+max-width:700px;
+color:#666;
+line-height:1.6;
+}
+
+/* PROMOTION */
+
+.promote{
+max-width:1100px;
+margin:60px auto;
+background:#171717;
+color:white;
+border-radius:25px;
+padding:50px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:25px;
+}
+
+.promote h2{
+font-family:Georgia,serif;
+font-size:36px;
+margin-bottom:12px;
+}
+
+.promote p{
+color:#bbb;
+line-height:1.5;
+max-width:650px;
+}
+
+.whatsapp{
+background:#f1d49a;
+color:#171717;
+padding:14px 20px;
+border-radius:30px;
+font-weight:bold;
+white-space:nowrap;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid #ddd8cc;
+padding:30px 20px;
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#666;
+font-size:13px;
+}
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+color:#171717;
+}
+
+.footer-logo img{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.events{
+grid-template-columns:repeat(2,1fr);
+}
+
+.promote{
+margin:40px 20px;
+padding:35px;
+display:block;
+}
+
+.whatsapp{
+display:inline-block;
+margin-top:25px;
+}
+
+footer{
+display:block;
+}
+
+footer>*{
+margin:12px 0;
+}
+
+}
+
+@media(max-width:550px){
+
+.events{
+grid-template-columns:1fr;
+}
+
+.hero{
+min-height:450px;
+}
+
+.section{
+padding:55px 20px;
+}
+
+.section h2{
+font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="nav">
+
+<a href="index.html" class="logo">
+
+<img src="logo.jpg" alt="Kakinada Diaries">
+
+<span>KAKINADA DIARIES</span>
+
+</a>
+
+<a href="index.html" class="back">
+← Home
+</a>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="label">
+KAKINADA • EVENTS
+</div>
+
+<h1>
+Events in Kakinada
+</h1>
+
+<p>
+Discover concerts, festivals, exhibitions, workshops,
+DJ nights and other events happening around Kakinada.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>
+What's happening in Kakinada?
+</h2>
+
+<div class="events">
+
+
+<div class="event-card">
+
+<div class="event-img concert">
+CONCERTS
+</div>
+
+<div class="event-content">
+
+<span class="event-date">
+🎤 LIVE EVENTS
+</span>
+
+<h3>
+Music & Concerts
+</h3>
+
+<p>
+Discover live music, concerts, singing nights
+and performances happening around Kakinada.
+</p>
+
+<div class="event-info">
+📍 Kakinada<br>
+🎟️ Tickets may be available
+</div>
+
+</div>
+
+</div>
+
+
+<div class="event-card">
+
+<div class="event-img festival">
+FESTIVALS
+</div>
+
+<div class="event-content">
+
+<span class="event-date">
+🎉 FESTIVALS
+</span>
+
+<h3>
+Festivals & Celebrations
+</h3>
+
+<p>
+Stay updated about cultural festivals,
+food festivals and city celebrations.
+</p>
+
+<div class="event-info">
+📍 Kakinada<br>
+🎟️ Check event details
+</div>
+
+</div>
+
+</div>
+
+
+<div class="event-card">
+
+<div class="event-img workshop">
+WORKSHOPS
+</div>
+
+<div class="event-content">
+
+<span class="event-date">
+📚 ACTIVITIES
+</span>
+
+<h3>
+Workshops & Activities
+</h3>
+
+<p>
+Find workshops, exhibitions, meetups and
+interesting activities happening locally.
+</p>
+
+<div class="event-info">
+📍 Kakinada<br>
+📅 Check upcoming dates
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="submit-section">
+
+<div class="submit-box">
+
+<div class="label">
+EVENT ORGANISERS
+</div>
+
+<h2>
+Have an event in Kakinada?
+</h2>
+
+<p>
+If you are organising a concert, festival, workshop,
+DJ night or any public event in Kakinada, send us the
+details. Selected events can be featured on Kakinada
+Diaries.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="promote">
+
+<div>
+
+<h2>
+Want to promote your event?
+</h2>
+
+<p>
+Reach Kakinada Diaries' local audience through
+event promotions, Instagram posts, reels and website
+featured listings.
+</p>
+
+</div>
+
+<a
+class="whatsapp"
+href="https://wa.me/919490120103?text=Hi%20Kakinada%20Diaries%2C%20I%20want%20to%20promote%20my%20event."
+target="_blank">
+
+Promote My Event →
+
+</a>
+
+</section>
+
+
+<footer>
+
+<div class="footer-logo">
+
+<img src="logo.jpg" alt="Kakinada Diaries">
+
+<span>
+KAKINADA DIARIES
+</span>
+
+</div>
+
+<div>
+© 2026 Kakinada Diaries
+</div>
+
+<div>
+
+<a
+href="https://www.instagram.com/kakinada_diaries/"
+target="_blank">
+Instagram
+</a>
+
+&nbsp; · &nbsp;
+
+<a
+href="https://wa.me/919490120103"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
