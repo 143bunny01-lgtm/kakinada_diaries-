@@ -1088,7 +1088,7 @@ WhatsApp
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-const SUPABASE_URL = "https://vwrgsyucocucqflusyaa.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://vwrgsyucocucqflusyaa.supabase.co";
 const SUPABASE_KEY = "sb_publishable_VXa480Km5wXTOwK6-JoANw_bz_eOETw";
 
 const supabaseClient = supabase.createClient(
@@ -1096,22 +1096,127 @@ const supabaseClient = supabase.createClient(
     SUPABASE_KEY
 );
 
+<style>
+.business-card{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  margin:15px 0;
+}
+
+.business-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.business-card-content{
+  padding:18px;
+}
+
+.business-card h3{
+  margin:0 0 8px;
+  font-size:20px;
+}
+
+.business-card .category{
+  font-size:13px;
+  color:#777;
+  margin-bottom:8px;
+}
+
+.business-card p{
+  margin:6px 0;
+}
+
+.business-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.business-buttons a{
+  padding:10px 15px;
+  border-radius:8px;
+  background:#111;
+  color:white;
+  text-decoration:none;
+}
+</style>
+
+<script>
 async function loadBusinesses() {
 
-    const { data, error } = await supabaseClient
-        .from("businesses")
-        .select("*")
-        .order("created_at", { ascending: false });
+  const { data, error } = await supabaseClient
+    .from("businesses")
+    .select("*")
+    .order("created_at", { ascending: false });
 
-    if (error) {
-        console.error("Supabase error:", error);
-        return;
-    }
+  if (error) {
+    console.error("Supabase error:", error);
+    return;
+  }
 
-    console.log("Businesses loaded:", data);
+  const section = document.querySelector(".listing-section");
+
+  if (!section) {
+    console.error("Listing section not found");
+    return;
+  }
+
+  const box = document.createElement("div");
+  box.className = "business-list";
+
+  data.forEach(business => {
+
+    const card = document.createElement("div");
+    card.className = "business-card";
+
+    card.innerHTML = `
+      ${business.photo_url ? `
+        <img src="${business.photo_url}" alt="${business.name || "Business"}">
+      ` : ""}
+
+      <div class="business-card-content">
+
+        <h3>${business.name || ""}</h3>
+
+        <div class="category">
+          ${business.category || ""}
+        </div>
+
+        <p>📍 ${business.location || ""}</p>
+
+        <p>${business.description || ""}</p>
+
+        <div class="business-buttons">
+
+          ${business.phone ? `
+            <a href="tel:${business.phone}">
+              Call
+            </a>
+          ` : ""}
+
+          ${business.phone ? `
+            <a href="https://wa.me/91${business.phone.replace(/\D/g,'')}">
+              WhatsApp
+            </a>
+          ` : ""}
+
+        </div>
+
+      </div>
+    `;
+
+    box.appendChild(card);
+  });
+
+  section.appendChild(box);
 }
 
 loadBusinesses();
+</script>
 </script>
 </body>
 </html>
